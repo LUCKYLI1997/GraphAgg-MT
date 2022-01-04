@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.9)
 project(Graph_Algo)
 
-find_package(MPI REQUIRED)
+#find_package(MPI REQUIRED)
 
-include_directories(${MPI_INCLUDE_PATH})
+#include_directories(${MPI_INCLUDE_PATH})
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -105,18 +105,6 @@ if(UNIX)
             algo_CubeAgg
             pthread)
 
-   add_executable(srv_UtilServerTest_CubeAgg
-           UtilServerTest_CubeAgg.cpp)
-
-   target_link_libraries(srv_UtilServerTest_CubeAgg
-           srv_UNIX_shm
-           srv_UNIX_msg
-           srv_UtilServer
-           algo_BellmanFord
-           algo_LabelPropagation
-           algo_CubeAgg
-           pthread)
-
     add_executable(srv_UtilClientTest
             UtilClientTest.cpp)
 
@@ -125,18 +113,5 @@ if(UNIX)
             srv_UNIX_shm
             srv_UNIX_msg
             srv_UtilClient)
-
-   add_executable(srv_UtilClientTest_CubeAgg
-           UtilClientTest_CubeAgg.cpp)
-
-   target_link_libraries(srv_UtilClientTest_CubeAgg
-           srv_UNIX_shm
-           srv_UNIX_msg
-           srv_UtilClient
-           algo_BellmanFord
-           algo_LabelPropagation
-           algo_CubeAgg
-           pthread
-            ${MPI_LIBRARIES})
 
 ENDIF(UNIX)
