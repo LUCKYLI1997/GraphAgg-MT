@@ -51,6 +51,8 @@ When executing algo_xxxTest, file testGraph.txt must be needed. GPUTests can onl
 
 None of those tests needs parameters to launch. They will search for necessary parameters for initialization from testGraph.txt instead.
 
+For algo_CubeAggTest, testGraphVertex.txt and testGraphEdge.txt are needed when executing. You can find them in the "test" direction. 
+
 ### srv_UtilxxxTest
 
 Since this srv library is written by using system V, one can only compile this library and run tests related to this library on UNIX-like system. 
